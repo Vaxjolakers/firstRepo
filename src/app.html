@@ -1,4 +1,282 @@
 <template>
-  <h1>${message}</h1>
-  <h2>HÄSt</h2>
+  
+  <div class="heading">
+    <h1 click.delegate="changeName()">${title}</h1>
+  </div>
+  <div class="image-box">
+    <img class="background-image" src="./pictures/bakgrundsbild.jpg">
+  </div>
+  <div class="game-tab">
+    <h5>NEXT GAME</h5>
+    <button click.delegate="nextGame()">
+      Next game!
+    </button>
+    <div>
+      <h4>${date} - ${time}</h4>
+    </div>
+    <div class="team-logos">
+      <!-- <img class="vaxjo" src="./pictures/vaxjo.png"> -->
+      <!-- <h3>VS</h3> -->
+      <!-- <img class="HV71" src="./pictures/hv71.png"> -->
+      <h3>${home} VS ${gone}</h3>
+    </div>
+  </div>
+  <div class= "match-tab">
+    <button click.delegate="previousGame()">
+      Previous game!
+    </button>
+  </div>
+  <div class="table-box">
+    <div class="tabell">
+      <h2 class="heading">Tabell</h2>
+      <table>
+        <tr>
+          <th>Placering</th>
+          <th>Lag</th>
+          <th>Poäng</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Linköping</td>
+          <td>21p</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Djurgården</td>
+          <td>20p</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Malmö</td>
+          <td>20p</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Frölunda</td>
+          <td>16p</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Luleå</td>
+          <td>15p</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Skellefteå</td>
+          <td>15p</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>HV71</td>
+          <td>14p</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Timrå</td>
+          <td>14p</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Mora</td>
+          <td>12p</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Färjestad</td>
+          <td>11p</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Växjö</td>
+          <td>11p</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Brynäs</td>
+          <td>9p</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Örebro</td>
+          <td>9p</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Rögle</td>
+          <td>5p</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+  </div>
+  <div class="table-columns">
+    <div class="points">
+      <h2 class="heading">Poängliga</h2>
+      <table>
+        <tr>
+          <th>Placering</th>
+          <th>Spelare</th>
+          <th>Klubb</th>
+          <th>Poäng</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Jacob Josefson</td>
+          <td>DIF</td>
+          <td>14p</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jakob Lilja</td>
+          <td>DIF</td>
+          <td>13p</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Daniel Brodin</td>
+          <td>DIF</td>
+          <td>11p</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Nick Sörensen</td>
+          <td>LHC</td>
+          <td>9p</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Mattias Tedenby</td>
+          <td>HV71</td>
+          <td>9p</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="goals">
+      <h2 class="heading"> Skytteliga</h2>
+      <table>
+        <tr>
+          <th>Placering</td>
+          <th>Spelare</th>
+          <th>Klubb</th>
+          <th>Mål</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Daniel Brodin</td>
+          <td>DIF</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Nick Sörensen</td>
+          <td>LHC</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Emil Bemström</td>
+          <td>DIF</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Robert Kousal</td>
+          <td>BIF</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Marcus Sylvegård</td>
+          <td>MIF</td>
+          <td>5</td>
+        </tr>
+      </table>
+    </div>
+    <div class="goalie">
+      <h3 class="heading">Målvaktsliga </h3>
+      <table>
+        <tr>
+          <th>Placering</th>
+          <th>Namn</th>
+          <th>Klubb</th>
+          <th>Procent</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Jonas Gustavsson</td>
+          <td>LHC</td>
+          <td>95,16%</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Viktor Fasth</td>
+          <td>VHL</td>
+          <td>94,69%</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Oscar Alsenfelt</td>
+          <td>MIf</td>
+          <td>94,38%</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Adam Reideborn</td>
+          <td>DIF</td>
+          <td>93,36%</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Johan Gustafsson</td>
+          <td>FHC</td>
+          <td>93,33%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <h2 class="Fakta">Om Växjö Lakers</h2>
+    <p class="fakta-text">Växjö Lakers är en ishockeyklubb från staden Växjö, Småland. <br> Lokaliserat i södra
+      Sverige. <br>
+      Klubben bildades år 1997 efter att Växjö HC gått i konkurs. <br> Växjö spelar i arenan Vida Arena. <br>
+      Deras A-Lag spelar dessutom nu på högsta nivån <br> i svensk ishockey. SHL. <br>
+      Växjö har sammanlagt 2 SM-Guld (2014/15) (2017/18).
+    </p>
+  </div>
+  <div>
+    <a class="ticket" href="https://vlh.ebiljett.nu/Home/tickets/343/False?style=shl&q=64d5cb26-1a00-42f2-82d9-f67c8c0cc174&p=01f93a59-9e9f-4d41-a96b-58970096813e&ts=1539771448&c=ebiljettnu&e=vlh&rt=Safetynet&h=90d66c696b5e56925b990550c1c4f09c">Köp
+      Biljetter NU!</a>
+  </div>
+  <div>
+    <a class="watch" href="https://www.cmore.se/sport/ishockey/shl"> Kolla in Matchen HÄR!</a>
+  </div>
+  <div>
+    <a class="SHL" href="https://www.vaxjolakers.se/">Växjö Lakers Hemsida</a>
+  </div>
+  <div class="hest"></div>
+  <footer>
+    <p class="kontakt">
+      Harry Soovik: <br><br>
+      Greta Kallmér:
+    </p>
+    <p class="tele">
+      Tele: <br><br>
+      Tele:
+    </p>
+    <p class="nummer">
+      070-652 47 24 <br><br>
+      079-349 52 09
+    </p>
+    <p class="Email">
+      E-Mail: <br><br>
+      E-Mail:
+    </p>
+    <p class="Mail">
+      Harry@soovik.se <br><br>
+      agkallmer@gmail.com
+    </p>
+  </footer>
+
 </template>
