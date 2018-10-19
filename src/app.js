@@ -45,6 +45,7 @@ export class App {
       this.gone = this.teamsArray[this.index];
       this.date = this.dateArray[this.index];
       this.time = this.timeArray[this.index];
+      
     }
   }
 }
