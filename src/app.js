@@ -1,11 +1,6 @@
-import './app.css';
-import { timingSafeEqual } from 'crypto';
 export class App {
-
-  activate() {
-    this.createVariables();
-  }
   constructor() {
+<<<<<<< HEAD
     this.message = 'Hello World! It\'s me';
     
   }
@@ -47,5 +42,8 @@ export class App {
       this.time = this.timeArray[this.index];
       
     }
+=======
+    this.message = 'Hello World!';
+>>>>>>> parent of 188613f... feature(EVERYWHERE): I AM PUSIHG MY CODE TO GITHUB
   }
 }
